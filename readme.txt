@@ -2,15 +2,15 @@
 Contributors: aarontgrogg
 Tags: navigation, menu, id, class, semantic, clean
 Requires at least: 3.0
-Tested up to: 3.3
-Stable tag: 1.2
+Tested up to: 3.4.2
+Stable tag: 2.0
 
 To reduce the extraneous WordPress classes and add unique IDs to navigation menus.
 
 
 == Description ==
 
-This simple plug-in removes all the extra classes WP adds to navigation menus,
+This plug-in limits the classes WordPress added to navigation menus to only those desired by the Theme owner,
 adds a unique ID to each `&lt;li&gt;` (except right now I cannot figure out how to add IDs to standard menus),
 and removes any empty `class` attributes.
 
@@ -33,7 +33,8 @@ Atg
 2. Unzip the ZIP
 3. Copy/paste the unzipped files into your WP plug-in directory (`/wp-content/plugins/`)
 4. From within WP's Plugin Admin panel, Activate the 'Navigation Menu IDs & Classes' plug-in
-5. Marvel at the power of technology!
+5. Choose which, if any, WP classes you wish to have in your HTML
+6. Marvel at the power of technology!
 
 
 == Frequently Asked Questions ==
@@ -43,8 +44,7 @@ Atg
   target `id="menu-item-72"` or `class="page-item-58"` in your CSS?).  This plug-in greatly reduces those classes,
   and adds classes that reflect the link's page name, in slug form, so you can easily target menu LIs in your CSS.
 = What WP classes are allowed to remain? =
-* Currently only `current_page_item`, but I would like to create an admin page that lets you easily check which native WP
-  classes you'd like to retain.
+* Any that you choose.
 = Does this work with standard and custom menus? =
 * Yes, both standard and custom menus will get class names that reflect the page name from the link they contain, such as:
   `<li class="about-us"><a href="about-us">About Us</a></li>`
@@ -57,6 +57,13 @@ Atg
 
 
 == Changelog ==
+
+= 2.0 =
+2012-10-03:
+* Finally added the admin screen!
+* Added `if ( ! function_exists( '...' ) ):` blocks around each plug-in function
+* Changed function namesspace from `nmic` to `NMIC`
+* Still want to find a way to gather possible WP class names programmatically, for "this" version of WP; any ideas?
 
 = 1.2 =
 2012-02-27:
