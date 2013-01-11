@@ -4,7 +4,7 @@
 	Plugin Name: Navigation Menu IDs & Classes
 	Plugin URI: http://aarontgrogg.com/2011/09/28/wordpress-plug-in-navigation-menu-ids-classes/
 	Description: Limits WP classes to those chosen by the Theme owner, and adds page name slug as LI's ID.
-	Version: 2.0
+	Version: 2.1
 	Author: Aaron T. Grogg
 	Author URI: http://aarontgrogg.com/
 	License: GPLv2 or later
@@ -57,7 +57,7 @@
 								<li>removes any empty <code>class</code> attributes.</li>
 							</ol>
 						</p>
-						<p>Choose any <code>class</code> below that you want included in your navigational menu <code>&lt;li&gt;</code> items.</p>
+						<p>Check any <code>class</code> below that you want included in your navigational menu <code>&lt;li&gt;</code> items.</p>
 					</div>
 					<form id="nmic-options-form" method="post" action="options.php" enctype="multipart/form-data">
 						<?php settings_fields('plugin_options'); ?>
@@ -71,16 +71,11 @@
 								checkboxes : null,
 								// function to check all class options
 								checkall : function() {
-									NMIC.checkboxes.attr('checked', true);
+									NMIC.checkboxes.prop('checked', true);
 								},
 								// function to uncheck all class options
 								uncheckall : function() {
-									NMIC.checkboxes.attr('checked', false);
-								},
-								// function to toggle a single checkbox
-								togglecheck : function() {
-									var input = jQuery(this).find('input');
-									input.prop('checked', !input[0].checked);
+									NMIC.checkboxes.prop('checked', false);
 								},
 								// let's get it started!
 								init : function(){
@@ -95,8 +90,6 @@
 											+ '</p>';
 									// And prepend to the form
 									form.prepend(html);
-									// Attached click listener for options form <tr> to toggle individual checkboxes
-									form.find('tr').on('click',NMIC.togglecheck);
 								}
 							}
 							NMIC.init();
@@ -125,7 +118,8 @@
 				add_settings_section('main_section', '', 'NMIC_section_cb', 'NMIC-admin');
 				// Loop through WP classes and build a listener for each
 				foreach ($NMIC_Classes as $class) {
-					add_settings_field($class, $class, 'create_class_option', 'NMIC-admin', 'main_section', $class);
+					//add_settings_field($class, $class, 'create_class_option', 'NMIC-admin', 'main_section', $class);
+					add_settings_field($class, $class, 'create_class_option', 'NMIC-admin', 'main_section', array( 'label_for' => 'nmic_'.$class ) );
 				}
 			}
 		endif; // NMIC_register_and_build_fields
@@ -152,12 +146,13 @@
 	//	Adds the checkbox & class name to the Admin options page
 		if ( ! function_exists( 'create_class_option' ) ):
 			function create_class_option($class) {
+				$class = $class['label_for'];
 				// Grab the options object
 				$options = get_option('plugin_options');
 				// Determine if the option was previously selected
 				$checked = (isset($options[$class]) && $options[$class]) ? 'checked="checked" ' : '';
 				// Output the HTML for this option
-				echo '<input class="check-field" type="checkbox" name="plugin_options['.$class.']" value="true" ' .$checked. '/>';
+				echo '<input type="checkbox" id="'.$class.'" name="plugin_options['.$class.']" class="check-field" value="true" ' .$checked. '/>';
 			}
 		endif; // create_class_option
 

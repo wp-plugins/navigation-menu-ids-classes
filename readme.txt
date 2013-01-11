@@ -2,8 +2,8 @@
 Contributors: aarontgrogg
 Tags: navigation, menu, id, class, semantic, clean
 Requires at least: 3.0
-Tested up to: 3.4.2
-Stable tag: 2.0
+Tested up to: 3.5
+Stable tag: 2.1
 
 To reduce the extraneous WordPress classes and add unique IDs to navigation menus.
 
@@ -21,9 +21,7 @@ More about this plug-in can be found at:
 Please let me know if you have any questions/suggestions/thoughts,
 
 Atg
-
 [http://aarontgrogg.com/](http://aarontgrogg.com/)
-
 [aarontgrogg@gmail.com](mailto:aarontgrogg@gmail.com)
 
 
@@ -57,6 +55,12 @@ Atg
 
 
 == Changelog ==
+
+= 2.1 =
+2013-01-11:
+* Fixed an issue where individual checkboxes seemed to not respond to click (in fact, thanks to WP's layout and jQuery's bubbling, my toggle function was toggling twice).  Was able to fix issue and remove the toggle function altogether.  Thanks, Erin Allen!
+* Fixed an issue where the `for` attribute for all of the `label`s was not getting added correctly.  Now the `label` for each row spans the entire row, meaning you can click anywhere in a row to toggle that checkbox.
+* Changed `NMIC.checkboxes.attr` to `NMIC.checkboxes.prop` in the `checkall` and `uncheckall` functions.
 
 = 2.0 =
 2012-10-03:
