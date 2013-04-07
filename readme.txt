@@ -3,7 +3,7 @@ Contributors: aarontgrogg
 Tags: navigation, menu, id, class, semantic, clean
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 2.1
+Stable tag: 2.2
 
 To reduce the extraneous WordPress classes and add unique IDs to navigation menus.
 
@@ -15,14 +15,13 @@ adds a unique ID to each `&lt;li&gt;` (except right now I cannot figure out how 
 and removes any empty `class` attributes.
 
 More about this plug-in can be found at:
-[http://aarontgrogg.com/2011/09/28/wordpress-plug-in-navigation-menu-ids-classes/](http://aarontgrogg.com/2011/09/28/wordpress-plug-in-navigation-menu-ids-classes/)
-(including screenshots, because I STILL cannot figure out how the `== Screenshots ==` section of this is supposed to work...).
+http://aarontgrogg.com/2011/09/28/wordpress-plug-in-navigation-menu-ids-classes/
 
 Please let me know if you have any questions/suggestions/thoughts,
 
 Atg
-[http://aarontgrogg.com/](http://aarontgrogg.com/)
-[aarontgrogg@gmail.com](mailto:aarontgrogg@gmail.com)
+http://aarontgrogg.com/
+aarontgrogg@gmail.com
 
 
 == Installation ==
@@ -50,8 +49,8 @@ Atg
 
 == Screenshots ==
 
-1. [screenshot-before.png](http://aarontgrogg.com/wp-content/uploads/2011/09/screenshot-before.png)
-2. [screenshot-after.png](http://aarontgrogg.com/wp-content/uploads/2011/09/screenshot-after.png)
+1. [Before](http://aarontgrogg.com/wp-content/uploads/2011/09/screenshot-1.png)
+2. [After](http://aarontgrogg.com/wp-content/uploads/2011/09/screenshot-2.png)
 
 
 == Changelog ==

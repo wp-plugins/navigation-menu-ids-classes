@@ -10,7 +10,19 @@
 	License: GPLv2 or later
 */
 
-/*	Begin Navigation Menu IDs & Classes */
+/*
+	Dev:
+		http://wordpress.dev/page-d/
+		plug-in deactivated:
+			"menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-739 current_page_item menu-item-829"
+			all are in array below
+		plug-in activated:
+			only gets page-name class
+
+*/
+
+
+/*	Global variables & functions */
 
 	//	Define global variable of all possible WP navigation menu item classes
 		/*
@@ -33,6 +45,9 @@
 				return $v;
 			}
 		endif; // NMIC_slugify_string
+
+
+/*	Admin page set-up */
 
 	//	Add submenu link to Settings section if in Admin
 		if ( ! function_exists( 'NMIC_create_admin_page' ) ):
@@ -156,6 +171,9 @@
 			}
 		endif; // create_class_option
 
+
+/*	Apply the plug-in functionality */
+
 	//	Limit the nav classes to only those selected by the Theme owner
 		if ( ! function_exists( 'NMIC_limit_classes' ) ):
 			function NMIC_limit_classes( $oldclasses, $page ) {
@@ -168,7 +186,8 @@
 				$newclasses[] = $current;
 				// Loop through all the WP classes and push any that match the owner's list into the $newclasses array
 				foreach($oldclasses as $class) {
-					if (isset($options[$class]) && $options[$class]) {
+					$option = 'nmic_'.$class;
+					if (isset($options[$option]) && $options[$option]) {
 						$newclasses[] = $class;
 					}
 				}
