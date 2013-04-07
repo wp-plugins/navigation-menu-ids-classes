@@ -4,7 +4,7 @@
 	Plugin Name: Navigation Menu IDs & Classes
 	Plugin URI: http://aarontgrogg.com/2011/09/28/wordpress-plug-in-navigation-menu-ids-classes/
 	Description: Limits WP classes to those chosen by the Theme owner, and adds page name slug as LI's ID.
-	Version: 2.1
+	Version: 2.3
 	Author: Aaron T. Grogg
 	Author URI: http://aarontgrogg.com/
 	License: GPLv2 or later
