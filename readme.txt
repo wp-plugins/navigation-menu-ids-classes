@@ -3,7 +3,7 @@ Contributors: aarontgrogg
 Tags: navigation, menu, id, class, semantic, clean
 Requires at least: 3.0
 Tested up to: 4.2.2
-Stable tag: 2.6
+Stable tag: 2.7
 
 To reduce the extraneous WordPress classes and add unique IDs to navigation menus.
 
@@ -54,7 +54,7 @@ Atg
 
 == Changelog ==
 
-= 2.6 =
+= 2.7 =
 2015-05-15:
 * Tested for WP 4.2.2 and slight refactoring of code
 
