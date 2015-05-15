@@ -2,8 +2,8 @@
 Contributors: aarontgrogg
 Tags: navigation, menu, id, class, semantic, clean
 Requires at least: 3.0
-Tested up to: 4.1.1
-Stable tag: 2.5
+Tested up to: 4.2.2
+Stable tag: 2.6
 
 To reduce the extraneous WordPress classes and add unique IDs to navigation menus.
 
@@ -35,13 +35,15 @@ Atg
 
 = Why bother? =
 * WP bakes in a ton of extraneous, border-line-useless, IDs and classes on navigation menu LIs (are you really going to
-  target `id="menu-item-72"` or `class="page-item-58"` in your CSS?).  This plug-in greatly reduces those classes,
-  and adds classes that reflect the link's page name, in slug form, so you can easily target menu LIs in your CSS.
+  target `#menu-item-72` or `.page-item-58` in your CSS?).  This plug-in greatly reduces those classes, and adds classes 
+  that reflect the link's page name, in slug form, so you can easily target menu LIs in your CSS.
+
 = What WP classes are allowed to remain? =
 * Any that you choose.
+
 = Does this work with standard and custom menus? =
 * Yes, both standard and custom menus will get class names that reflect the page name from the link they contain, such as:
-  `<li class="about-us"><a href="about-us">About Us</a></li>`
+  `<li class="about-us"><a href="/about-us">About Us</a></li>`
 
 
 == Screenshots ==
@@ -52,9 +54,13 @@ Atg
 
 == Changelog ==
 
+= 2.6 =
+2015-05-15:
+* Tested for WP 4.2.2 and slight refactoring of code
+
 = 2.5 =
 2015-03-13:
-* Fixing issue if no cusotm classes exist
+* Fixing issue if no custom classes exist
 
 = 2.4 =
 2013-07-11:
